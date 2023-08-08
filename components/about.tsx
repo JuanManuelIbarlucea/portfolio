@@ -1,34 +1,32 @@
-'use client';
+"use client";
 
-import SectionHeading from './section-heading';
-import { motion } from 'framer-motion';
+import SectionHeading from "./section-heading";
+import { motion } from "framer-motion";
+
 export default function About() {
   return (
     <motion.section
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40"
+      className="mb-28 max-w-[45rem] text-center leading-8 sm:m-0"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
-        A passionate<span className="font-bold">Full Stack Developer</span> with
-        a profound love for crafting seamless digital experiences. With a robust
-        journey spanning over 5 years in the tech realm, I've been fully
-        immersed in every facet of the development lifecycle. My expertise
-        thrives in the realm of JavaScript, where I've masterfully wielded
-        frameworks like ReactJS and harnessed the power of Node.js to bring
-        innovative ideas to life. But my toolkit doesn't stop there – I'm also
-        well-versed in languages like C++, C#, Python, and Java, adding
+      <p>
+        A passionate <span className="font-bold">Full Stack Developer</span>{" "}
+        with a profound love for crafting seamless digital experiences. I'm also
+        well-versed in languages like{" "}
+        <span className="font-bold">C++, C#, Python, and Java</span>, adding
         versatility to my creative arsenal.
         <br />
         <br />
-        Flexibility is my forte. I'm a dynamic problem-solver, capable of
+        <span className="font-bold">Flexibility</span> is my forte. I'm a{" "}
+        <span className="font-bold">dynamic problem-solver</span>, capable of
         gracefully adapting to even the most challenging of environments. My
-        penchant for clear communication is the cornerstone of my collaborative
+        penchant for <span className="font-bold">clear communication</span> is the cornerstone of my collaborative
         prowess, enabling me to seamlessly blend into team dynamics while also
-        excelling autonomously. Beyond the code, I am driven by a relentless
-        desire for growth. Evolving alongside the ever-shifting technological
+        excelling autonomously. Beyond the code, I am driven by a <span className="font-bold">relentless
+        desire for growth</span>. Evolving alongside the ever-shifting technological
         landscape is ingrained in my DNA.
         <br />
         <br />
