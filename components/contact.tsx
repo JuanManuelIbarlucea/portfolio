@@ -11,11 +11,12 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="mb-20 sm:mb-28 w-[min(100%, 38rem)] text-center"
+      className="mb-20 sm:mb-28 w-[min(100%, 38rem)] text-center scroll-mt-36"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
+      ref={ref}
     >
       <SectionHeading>Contact me</SectionHeading>
       <p className="text-gray-700 text-center -mt-4">
