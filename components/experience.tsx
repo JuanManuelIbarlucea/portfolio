@@ -8,6 +8,7 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { experiencesData } from '@/lib/data';
 import useSectionInView from '@/hooks/use-section-in-view';
+import Image from 'next/image';
 export default function Experience() {
   const { ref } = useSectionInView('Experience');
 
@@ -27,7 +28,7 @@ export default function Experience() {
               }}
               contentArrowStyle={{ borderRight: '0.4rem solid #9ca3af' }}
               date={item.date}
-              icon={<img src={item.icon.src} />}
+              icon={<Image src={item.icon.src} alt={item.company} />}
               iconStyle={{
                 background: 'white',
                 fontSize: '1.5rem',
