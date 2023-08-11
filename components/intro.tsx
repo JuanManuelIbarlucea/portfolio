@@ -1,23 +1,30 @@
-"use client";
+'use client';
 
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 
-import { FaGithub } from "react-icons/fa";
-import { HiDownload } from "react-icons/hi";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import portrait from "@/public/portrait.jpg";
+import { FaGithub } from 'react-icons/fa';
+import { HiDownload } from 'react-icons/hi';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import portrait from '@/public/portrait.jpg';
+import useSectionInView from '@/hooks/use-section-in-view';
 
 export default function Intro() {
+  const { ref } = useSectionInView('Home', 0.5);
+
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0 ">
+    <section
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      id="home"
+      ref={ref}
+    >
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "tween", duration: 0.2 }}
+            transition={{ type: 'tween', duration: 0.2 }}
           >
             <Image
               src={portrait}
@@ -32,7 +39,7 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 125,
               delay: 0.1,
               duration: 0.7,
@@ -51,11 +58,12 @@ export default function Intro() {
         Hi! I'm <span className="font-bold">Juan.</span>
         <br /> I am a <span className="font-bold">
           full stack developer
-        </span>{" "}
+        </span>{' '}
         with over <span className="font-bold">5 years of experience</span>,
         involved in all stages of the development cycle. Throughout my career, I
-        have primarily worked with  <span className="font-bold">JavaScript</span> frameworks and environments such
-        as <span className="font-bold">React(Next.js) and Node.js</span>.
+        have primarily worked with <span className="font-bold">JavaScript</span>{' '}
+        frameworks and environments such as{' '}
+        <span className="font-bold">React(Next.js) and Node.js</span>.
       </motion.h1>
 
       <motion.div
