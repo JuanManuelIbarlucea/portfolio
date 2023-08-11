@@ -16,10 +16,13 @@ const fadeInAnimationsVariant = {
 export default function Skills() {
   const { ref } = useSectionInView('Skills', 0.9);
   return (
-    <section
+    <motion.section
       ref={ref}
       id="skills"
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-0"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.25 }}
     >
       <SectionHeading>My Skills</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
@@ -39,6 +42,6 @@ export default function Skills() {
           </motion.li>
         ))}
       </ul>
-    </section>
+    </motion.section>
   );
 }

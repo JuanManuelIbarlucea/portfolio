@@ -44,14 +44,14 @@ export default function Project({
             <a
               href={url}
               target="_blank"
-              className="p-4 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-[1.10] transition cursor-pointer border border-black/10"
+              className="p-4 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-[1.10] transition cursor-pointer borderBlack"
             >
               <FaLink />
             </a>
             <a
               href={github}
               target="_blank"
-              className=" bg-violet-700 text-white p-4 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-[1.10] transition cursor-pointer border border-black/10"
+              className=" bg-violet-700 text-white p-4 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-[1.10] transition cursor-pointer borderBlack"
             >
               <FaGithub />
             </a>
