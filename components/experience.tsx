@@ -1,17 +1,22 @@
-'use client';
-import React from 'react';
-import SectionHeading from './section-heading';
+"use client";
+
+import "react-vertical-timeline-component/style.min.css";
+
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { experiencesData } from '@/lib/data';
-import useSectionInView from '@/hooks/use-section-in-view';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+} from "react-vertical-timeline-component";
+
+import Image from "next/image";
+import React from "react";
+import SectionHeading from "./section-heading";
+import TagList from "./tag-list";
+import { experiencesData } from "@/lib/data";
+import { motion } from "framer-motion";
+import useSectionInView from "@/hooks/use-section-in-view";
+
 export default function Experience() {
-  const { ref } = useSectionInView('Experience');
+  const { ref } = useSectionInView("Experience");
 
   return (
     <motion.section
@@ -28,20 +33,20 @@ export default function Experience() {
           <React.Fragment key={index}>
             <VerticalTimelineElement
               contentStyle={{
-                background: '#f3f4f6',
-                boxShadow: 'none',
-                border: '1px solid rgba(0,0,0,0.5)',
-                textAlign: 'left',
-                padding: '1.3rem 2rem',
+                background: "#f3f4f6",
+                boxShadow: "none",
+                border: "1px solid rgba(0,0,0,0.5)",
+                textAlign: "left",
+                padding: "1.3rem 2rem",
               }}
-              contentArrowStyle={{ borderRight: '0.4rem solid #9ca3af' }}
+              contentArrowStyle={{ borderRight: "0.4rem solid #9ca3af" }}
               date={item.date}
               icon={<Image src={item.icon.src} alt={item.company} fill />}
               iconStyle={{
-                background: 'white',
-                fontSize: '1.5rem',
-                overflow: 'hidden',
-                content: 'cover',
+                background: "white",
+                fontSize: "1.5rem",
+                overflow: "hidden",
+                content: "cover",
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
@@ -50,6 +55,7 @@ export default function Experience() {
               <p className="!mt-1 !font-normal text-gray-700">
                 {item.description}
               </p>
+             <TagList tags={item.stack}/>
             </VerticalTimelineElement>
           </React.Fragment>
         ))}

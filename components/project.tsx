@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { FaGithub, FaLink } from "react-icons/fa";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-import Image from 'next/image';
-import { projectsData } from '@/lib/data';
-import { useRef } from 'react';
-import { FaLink, FaGithub } from 'react-icons/fa';
+import Image from "next/image";
+import TagList from "./tag-list";
+import { projectsData } from "@/lib/data";
+import { useRef } from "react";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -20,7 +21,7 @@ export default function Project({
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 1', '1.33 1'],
+    offset: ["0 1", "1.33 1"],
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
@@ -41,13 +42,15 @@ export default function Project({
           <h3 className="text-2xl font-semibold">{title}</h3>
           <h3 className="mt-2 leading-relaxed text-gray-700">{description}</h3>
           <div className="flex justify-center align-center gap-2 mt-4">
-            <a
-              href={url}
-              target="_blank"
-              className="p-4 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-[1.10] transition cursor-pointer borderBlack"
-            >
-              <FaLink />
-            </a>
+            {url && (
+              <a
+                href={url}
+                target="_blank"
+                className="p-4 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-[1.15] hover:scale-[1.15] active:scale-[1.10] transition cursor-pointer borderBlack"
+              >
+                <FaLink />
+              </a>
+            )}
             <a
               href={github}
               target="_blank"
@@ -57,14 +60,7 @@ export default function Project({
             </a>
           </div>
           <ul className="flex flex-wrap mt-4 gap-2">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
+            <TagList tags={tags} />
           </ul>
         </div>
 
@@ -76,9 +72,7 @@ export default function Project({
         transition
         group-even:-right-[initial] group-even:-left-40
         group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
-
         group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
-
         group-hover:scale-[1.04]
         "
         />
