@@ -5,6 +5,7 @@ import portfolio from "@/public/portfolio.png";
 import salesbricks from "@/public/salesbricks.jpeg";
 import truepill from "@/public/truepill.jpeg";
 import ulu from "@/public/ulu.jpeg";
+import valley from "@/public/valley.jpeg";
 
 export const links = [
   {
@@ -97,7 +98,7 @@ export const experiencesData = [
       "Express",
       "MongoDB",
       "GraphQL",
-    ], 
+    ],
     date: "Jun 2022 - Ene 2023",
   },
   {
@@ -118,6 +119,27 @@ export const experiencesData = [
       "MongoDB",
     ],
     date: "Mar 2023 - May 2023",
+  },
+  {
+    company: "Valley",
+    title: "Full-Stack Developer",
+    location: "San Francisco, CA (Remote)",
+    description:
+      "Worked on a part in a multi-faceted platform that automates the end-to-end appointment setting process for B2B companies. Contributed to creating a platform that helps companies better manage their customer relationships and appointment scheduling processes.",
+    icon: valley,
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "JavaScript",
+      "TypeScript",
+      "Nest.js",
+      "Git",
+      "PostgreSQL",
+      "Redis",
+      "GraphQL",
+      "OpenAI API",
+    ],
+    date: "Oct 2023 - May 2024",
   },
 ] as const;
 
