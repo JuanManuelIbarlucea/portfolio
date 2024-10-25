@@ -6,6 +6,7 @@ import salesbricks from "@/public/salesbricks.jpeg";
 import truepill from "@/public/truepill.jpeg";
 import ulu from "@/public/ulu.jpeg";
 import valley from "@/public/valley.jpeg";
+import solidity from "@/public/solidity.jpeg";
 
 export const links = [
   {
@@ -140,6 +141,24 @@ export const experiencesData = [
       "OpenAI API",
     ],
     date: "Oct 2023 - May 2024",
+  },
+  {
+    company: "Solidity.io",
+    title: "Full-Stack Developer",
+    location: "Remote",
+    description:
+      "Led a data-driven project focused on building a scalable system to compile, process, and update property data from multiple sources, ensuring high performance and reliability. Contributed to a Web3 project by integrating ERC721 tokens, providing a secure and seamless experience for tokenized assets. Additionally, reworked a webpage from scratch based on Figma designs, delivering a pixel-perfect, responsive interface that enhanced both aesthetics and functionality.",
+    icon: solidity,
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "JavaScript",
+      "TypeScript",
+      "Nest.js",
+      "PostgreSQL",
+      "GraphQL",
+    ],
+    date: "May 2024 - Oct 2024",
   },
 ] as const;
 
